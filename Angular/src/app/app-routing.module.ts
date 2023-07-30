@@ -7,6 +7,13 @@ import { RegisterComponent } from "./@shared/components/register/register.compon
 import { WelcomeComponent } from "./components/welcome/welcome.component";
 import { ProfileComponent } from "./components/profile/profile.component";
 import { RankingsComponent } from "./components/rankings/rankings.component";
+import { GiocaComponent } from './components/gioca/gioca.component';
+import { GameResultsComponent } from "./components/game-results/game-results.component";
+import { GameResultsItemDetailsComponent } from "./components/game-results-item-details/game-results-item-details.component";
+import { FavoritesMoviesComponent } from "./components/favorites-movies/favorites-movies.component";
+
+import { FavoritesMoviesItemDetailsComponent } from "./favorites-movies-item-details/favorites-movies-item-details.component";
+
 
 const routes: Routes = [
   {
@@ -17,6 +24,12 @@ const routes: Routes = [
       { path: "welcome", component: WelcomeComponent },
       { path: "profile", component: ProfileComponent },
       { path: "rankings", component: RankingsComponent },
+      { path: "gioca", component: GiocaComponent },
+      { path: "result", component: GameResultsComponent },
+      { path: "movie/:movieId", component: GameResultsItemDetailsComponent },
+      { path: "favorites", component: FavoritesMoviesComponent },
+
+      { path: "ratings/:id/:movieId", component: FavoritesMoviesItemDetailsComponent },
       { path: "", redirectTo: "welcome", pathMatch: 'full' },
     ],
   },

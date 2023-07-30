@@ -1,0 +1,17 @@
+<div class="reviews-list">
+  <h4 class="centered">La lista dei tuoi film preferiti</h4>
+  <div class="movie-container">
+    <ng-container *ngFor="let movie of myMoviesReviewed">
+      <div class="movie-card">
+        <div class="card border-0 shadow-sm py-2 text-center">
+          <tnv-favorites-movies-item
+           (deleteClicked)="onDeleteClicked($event)"
+           (editClicked)="onEditClicked($event)"
+           (imgClicked)="onImgClicked($event)"
+           [myMovieReview]="movie">
+          </tnv-favorites-movies-item>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>

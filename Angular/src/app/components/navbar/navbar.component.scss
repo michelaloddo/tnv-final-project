@@ -1,0 +1,54 @@
+.navbar-dark .navbar-nav .nav-link {
+  color: white;
+  font-family: "Sen", sans-serif;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  mat-icon {
+    color: white;
+  }
+
+  span {
+    margin-left: 10px;
+    max-width: 0;
+    overflow: hidden;
+    color: white;
+    transition: max-width 0.3s ease-out;
+  }
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+  cursor: pointer;
+
+  span {
+    max-width: 200px;
+  }
+
+  .icon-book-active {
+    color: rgb(255, 255, 0);
+  }
+
+  .icon-games-active {
+    color: rgb(92, 218, 20);
+  }
+
+  .icon-scoreboard-active {
+    color: rgb(0, 217, 255);
+  }
+
+  .icon-favorite-active {
+    color: #f00;
+  }
+
+  .icon-account_circle-active {
+    color: rgb(255, 0, 170);
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-dark .navbar-nav .nav-link span {
+    max-width: 200px;
+  }
+}

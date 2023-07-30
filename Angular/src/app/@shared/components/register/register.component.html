@@ -13,10 +13,10 @@
         </div>
         <form #f="ngForm" (ngSubmit)="register(f)">
           <div class="form-group">
-            <label class="label" for="name">Nome</label>
+            <label class="label" for="username">Username</label>
             <input
               [ngModel]
-              name="name"
+              name="username"
               type="text"
               class="form-control"
               placeholder="Nome"
@@ -35,20 +35,20 @@
             >
           </div>
           <div class="form-group">
-            <label class="label" for="surname">Cognome</label>
+            <label class="label" for="email">eMail</label>
             <input
               [ngModel]
-              name="surname"
+              name="email"
               type="text"
               class="form-control"
-              placeholder="Cognome"
+              placeholder="eMail"
               required
-              id="surname"
-              #surname="ngModel"
+              id="email"
+              #email="ngModel"
             />
             <small
               [style.visibility]="
-                surname.invalid && (surname.dirty || surname.touched)
+                email.invalid && (email.dirty || email.touched)
                   ? 'visible'
                   : 'hidden'
               "
@@ -56,29 +56,7 @@
               >Campo obbligatorio</small
             >
           </div>
-          <div class="form-group">
-            <label class="label" for="username">Username</label>
-            <input
-              [ngModel]
-              name="username"
-              type="text"
-              class="form-control"
-              placeholder="Username"
-              required
-              id="username"
-              #username="ngModel"
-            />
-            <small
-              [style.visibility]="
-                username.invalid && (username.dirty || username.touched)
-                  ? 'visible'
-                  : 'hidden'
-              "
-              class="form-text text-danger"
-              >Campo obbligatorio</small
-            >
-          </div>
-
+          
           <div class="form-group">
             <label class="label" for="password">Password</label>
             <input
@@ -106,7 +84,7 @@
               type="submit"
               class="form-control btn btn-primary rounded submit px-3 mt-2"
             >
-              Registrati
+              Registrati <!--manca un onClick emitter-->
             </button>
           </div>
         </form>

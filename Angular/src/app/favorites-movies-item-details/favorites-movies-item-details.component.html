@@ -1,0 +1,37 @@
+<div class="card">
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+    <div class="poster-container">
+      <img [src]="'https://image.tmdb.org/t/p/w342/'+ movie.poster_path" [alt]="movie.title" class="poster">
+    </div>
+    <div class="card-content">
+      <div class="info-container">
+        <h3 class="title">{{ movie.title }}</h3>
+        <p class="release-date">Data d'uscita: {{ movie.release_date }}</p>
+        <p class="release-date">Lingua Originale: {{ movie.original_language }}</p>
+        <div class="rating-container">
+          <span class="rating-text"> voto medio:</span>
+          <span class="rating-icon">&#9733;</span>
+          <span class="rating-value"> {{ movie.vote_average }}/10.0</span>
+        </div>
+      </div>
+      <p class="overview">{{ movie.overview }}</p>
+  
+  
+      
+      <div *ngIf="!isFormValid ">
+        <!-- Aggiungi un messaggio o un avviso per indicare che il form non è valido -->
+        <p>Il form non è valido. Si prega di compilare tutti i campi correttamente.</p>
+      </div>
+      
+      <div class="comment-container">
+        <ngb-rating [rate]="review.ratingStars" [max]="5" (rateChange)="onRatingChange($event)"></ngb-rating>
+        <textarea class="comment-box" [(ngModel)]="review.textComment" maxlength="160" (input)="onCommentChange($event)"></textarea>
+        <div class="buttons-container">
+          <button id="addToFavoritesBtn" class="comment-btn" [ngClass]="{'disabled-btn': !isFormValid}" 
+            [disabled]="!isFormValid" (click)="updateReview()">
+            Modifica recensione
+          </button>
+        </div>
+      </div>
+
+      

@@ -1,6 +1,9 @@
 export interface Rating {
-    id?: string,
-    userId: string,
-    movieId: string,
-    rating: number
+    
+idRating: number;
+userId: number;
+movieId: number;
+ratingStars: number;
+textComment: string;
+timestamp: Date;
 }
