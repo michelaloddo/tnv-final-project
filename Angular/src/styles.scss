@@ -54,13 +54,13 @@ ngb-rating {
   color: $primary;
 }
 
-html, body {
+/*html, body {
   height: 100%;
   font-family: Roboto, "Helvetica Neue", sans-serif;
-  position: relative; /* Aggiungi posizione relativa al body */
+  position: relative; /* Aggiungi posizione relativa al body 
  // background-color: rgb(224, 224, 224);
 }
-/*.image-container{
+.image-container{
   background-color: rgb(224, 224, 224);;
   border-color: rgb(224, 224, 224);
 }
