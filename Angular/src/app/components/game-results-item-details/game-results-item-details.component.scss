@@ -1,11 +1,16 @@
 .card {
   display: flex;
   border-radius: 8px;
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff; 
+  box-shadow: 0 4px 8px #00000044;
   overflow: hidden;
   margin-bottom: 16px;
   font-family: 'Sen', sans-serif;
+  transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.05);
 }
 
 .poster-container {
@@ -24,23 +29,26 @@
 
 .card-content {
   padding: 16px;
+  color: #1b1b1b;
 }
 
 .title {
   font-size: 24px;
   font-weight: bold;
+  color: #1b1b1b; 
   margin-bottom: 8px;
 }
 
 .overview {
   font-size: 16px;
+  color: #1b1b1b;
   margin-bottom: 12px;
 }
 
 .release-date,
 .vote-average {
   font-size: 14px;
-  color: #777;
+  color: #1b1b1b; 
   margin-bottom: 4px;
 }
 
@@ -63,18 +71,25 @@
   height: 100px;
   resize: vertical;
   padding: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid #ff8c00;
   border-radius: 4px;
   font-size: 14px;
+  background-color: #ffffff; 
+  color: #1b1b1b; 
 }
 
 .comment-btn {
   background-color: #ff8c00;
-  color: #fff;
+  color: #1b1b1b; 
   border: none;
   padding: 8px 16px;
   border-radius: 4px;
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.comment-btn:hover {
+  background-color: #ffa64d;
 }
 
 .info-container {
@@ -96,6 +111,7 @@
 .rating-icon {
   font-size: 20px;
   margin-right: 4px;
+  vertical-align: middle;
 }
 
 .rating-value {
@@ -105,7 +121,7 @@
 
 .rating-text{
   font-size: 14px;
-  color: #777;
+  color: #1b1b1b;
   margin-bottom: 4px;
 }
 
@@ -121,6 +137,7 @@
 
 .rating-label {
   margin-right: 10px;
+  color: #1b1b1b; 
 }
 
 @media screen and (max-width: 600px) {
