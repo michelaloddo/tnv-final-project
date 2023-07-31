@@ -2,16 +2,13 @@
   <div class="profile-details"> 
     <h2>Profilo Utente</h2> 
     <div class="profile-item"> 
-      <span>Username:</span> 
+      <span class="profile-label">Username:</span> 
       <span class="profile-data">{{ currentUser.username }}</span> 
     </div> 
     <div class="profile-item"> 
-      <span>E-Mail:</span> 
+      <span class="profile-label">E-Mail:</span> 
       <span class="profile-data">{{ currentUser.email }}</span> 
     </div> 
-    <div class="profile-item"> 
-      <a href="/edit-profile">Modifica Profilo</a>
-    </div>
   </div> 
   <div class="profile-logout"> 
     <tnv-logout></tnv-logout> 
