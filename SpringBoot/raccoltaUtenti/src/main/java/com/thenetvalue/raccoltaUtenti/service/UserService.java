@@ -22,6 +22,7 @@ public class UserService {
         this.userDAO = userDAO;
     }
 
+
     public User logIn(String username, String password) throws IllegalArgumentException {
         if (username == null || password == null) {
             throw new IllegalArgumentException("Username e password obbligatori per effettuare il login");
@@ -30,7 +31,7 @@ public class UserService {
             if (user == null || !passwordEncoder.matches(password, user.getPassword())) {
                 throw new IllegalArgumentException("Username o password non corretti");
             }
-            return user; // Restituisce l'oggetto User se il login è avvenuto con successo
+            return user;
         }
     }
 
@@ -54,13 +55,7 @@ public class UserService {
        }
     }
 
-    public Optional<User> getUser(int id) {
-        return userDAO.findById(id);
-    }
 
-    public Iterable<User> allUsers() {
-        return userDAO.findAll();
-    }
 
     public User updateUser(int id, User user) {
         user.setId(id);
@@ -86,39 +81,40 @@ public class UserService {
         return userDAO.findByUsernameContainsAndEmailContains(partialUsername, partialMail);
     }
 
-    public User updatePointsUser(int id,int points) {
+    public User updatePointsUser(int id,int points)throws IllegalArgumentException {
         User user = userDAO.findById(id).orElse(null);
         if (user != null) {
             user.setPoints(user.getPoints() + points);
             userDAO.save(user);
             return user;
-        }
-        else return null;
-    }
-
-    public User updatePasswordAndEmail(int id, UpdateUser updateUser) {
-        User user = userDAO.findById(id).orElse(null);
-        if (user != null) {
-            String newPassword = user.getPassword();
-            if (newPassword != null) {
-                String hashedPassword = passwordEncoder.encode(newPassword);
-                updateUser.setPassword(hashedPassword);
-            }
-
-            String newEmail = user.getEmail();
-            if (newEmail != null) {
-                updateUser.setEmail(newEmail);
-            }
-
-            userDAO.save(updateUser);
-            return updateUser;
         } else {
-            return null;
+            throw new IllegalArgumentException("Username ed Email obbligatori.");
         }
     }
 
+    public User updateUser(int userId, UpdateUser updateUser) {
+        User user = userDAO.findById(userId).orElse(null);
+        if (user != null) {
+
+            if (updateUser.getEmail() != null && updateUser.getPassword() != null) {
+                user.setEmail(updateUser.getEmail());
+                user.setPassword(passwordEncoder.encode(updateUser.getPassword()));
+            }
+
+            // Salva il nuovo utente aggiornato
+            return userDAO.save(user);
+        }
+        throw new IllegalArgumentException("errore durante l'aggiornamento del profilo.");
+    }
 
 
+    public Optional<User> getUser(int id) {
+        return userDAO.findById(id);
+    }
+
+    public Iterable<User> allUsers() {
+        return userDAO.findAll();
+    }
 }
 
 

@@ -15,24 +15,21 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { RankingsComponent } from './components/rankings/rankings.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './@shared/modules/angular-material/angular-material.module';
-import { GiocaComponent } from './components/gioca/gioca.component';
+import { GiocaComponent } from './components/game-section/gioca/gioca.component';
 import { CdkDrag, CdkDragPreview, CdkDropList } from '@angular/cdk/drag-drop';
-import { GameResultsComponent } from './components/game-results/game-results.component';
-import { FooterComponent } from './footer/footer.component';
+import { GameResultsComponent } from './components/game-section/game-results/game-results.component';
+import { FooterComponent } from './components/footer/footer.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { GameResultsItemComponent } from './components/game-results-item/game-results-item.component';
+import { GameResultsItemComponent } from './components/game-section/game-results-item/game-results-item.component';
 import { GameResultsItemDetailsComponent } from './components/game-results-item-details/game-results-item-details.component';
-import { FavoritesMoviesComponent } from './components/favorites-movies/favorites-movies.component';
-import { FavoritesMoviesItemComponent } from './components/favorites-movies-item/favorites-movies-item.component';
-
+import { FavoritesMoviesComponent } from './components/reviews-movies/favorites-movies/favorites-movies.component';
+import { FavoritesMoviesItemComponent } from './components/reviews-movies/favorites-movies-item/favorites-movies-item.component';
 import { MatMenuModule } from '@angular/material/menu';
-import { FavoritesMoviesItemDetailsComponent } from './favorites-movies-item-details/favorites-movies-item-details.component';
-
-
-import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { FavoritesMoviesItemDetailsComponent } from './components/reviews-movies/favorites-movies-item-details/favorites-movies-item-details.component';
+import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 
 @NgModule({
   declarations: [

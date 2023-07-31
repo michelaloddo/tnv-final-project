@@ -13,7 +13,6 @@ import { DbmoviesService } from 'src/app/services/dbmovieservice.service';
   styleUrls: ['./game-results-item-details.component.scss']
 })
 export class GameResultsItemDetailsComponent implements OnInit {
-  apiImageAddress = "http://image.tmdb.org/t/p/"
   movieId!: number;
   isFormValid: boolean = false;
   comment: string = '';
@@ -22,7 +21,7 @@ export class GameResultsItemDetailsComponent implements OnInit {
   currentUser!: User;
   movie: Partial<Movie>={} ;
  
-  review: Rating = {  // Inizializzazione dell'oggetto review
+  review: Rating = {  
     idRating: 0,
     userId: 0,
     movieId: 0,
@@ -33,7 +32,7 @@ export class GameResultsItemDetailsComponent implements OnInit {
 
 
   constructor(private activatedRoute: ActivatedRoute, private dbmoviesService: DbmoviesService,
-    private ratingService: RatingService, private httpClient: HttpClient, private router: Router) {
+    private ratingService: RatingService, private router: Router) {
     this.currentUser = JSON.parse(localStorage.getItem("user") || '') as User;
     this.movieId = this.activatedRoute.snapshot.params['movieId'];
   }
@@ -55,12 +54,11 @@ export class GameResultsItemDetailsComponent implements OnInit {
     });
   }
 
-
   isAlreadyFavourite() {
     this.ratingService.getRating(this.currentUser.id, this.movieId).subscribe({
       next: (res: Rating) => {
         this.review = res;
-        this.isFavorite = true; // Film trovato nei preferiti
+        this.isFavorite = true; 
         console.log('recensione trovata:', this.review);
         this.comment=this.review.textComment;
         this.rating=this.review.ratingStars;
@@ -70,7 +68,6 @@ export class GameResultsItemDetailsComponent implements OnInit {
       }
     });
   }
-
 
   onRatingChange(value: number) {
     this.rating = value;
@@ -82,12 +79,9 @@ export class GameResultsItemDetailsComponent implements OnInit {
     this.checkFormValidity();
   }
   checkFormValidity() {
-    // Controllo se il commento è presente e la valutazione è stata fatta
     this.isFormValid = !!this.comment && !!this.rating;
   }
 
-
-  
   addToFavorites() {
     this.review.movieId = this.movieId;
     this.review.userId = this.currentUser.id;

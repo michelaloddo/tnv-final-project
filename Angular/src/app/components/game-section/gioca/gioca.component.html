@@ -10,25 +10,16 @@
       </div>
     </div>
   </div>
-
   <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
     <div class="example-box" *ngFor="let movie of movies" cdkDrag>
       {{ movie.title }}
-      <img
-        *cdkDragPreview
-        [src]="
+      <img *cdkDragPreview [src]="
           'https://image.tmdb.org/t/p/w220_and_h330_face/' + movie.poster_path
-        "
-        [alt]="movie.title"
-      />
+        " [alt]="movie.title" />
     </div>
   </div>
-  
   <div class="page-button">
-    <button class="submit-button"(click)="checkMoviesByUser()">Conferma</button>
-</div>
-
+    <button class="submit-button" (click)="checkMoviesByUser()">Conferma</button>
+  </div>
   <div *ngIf="isSubmitPressed"><tnv-game-results></tnv-game-results></div>
 </div>
-
-

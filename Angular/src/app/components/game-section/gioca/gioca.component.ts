@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { DbmoviesService } from '../../services/dbmovieservice.service';
-import { Movie} from '../../models/movie';
+import { DbmoviesService } from '../../../services/dbmovieservice.service';
+import { Movie} from '../../../models/movie';
 import {
   CdkDragDrop,
   moveItemInArray,
@@ -28,9 +28,8 @@ export class GiocaComponent implements OnInit {
     this.getMovies();
   }
 
-
-   shuffleArray(movies: any []) {
-    return movies.sort(()=> Math.random()-0.5);
+   shuffleArray(array: any []) {
+    return array.sort(()=> Math.random()-0.5);
   }
 
   getMovies() {
@@ -43,7 +42,6 @@ export class GiocaComponent implements OnInit {
         console.error('Si è verificato un errore nel recupero dei film:', error);
       }
     });
-
   }
 
   drop(event: CdkDragDrop<{ title: string; poster: string }[]>) {

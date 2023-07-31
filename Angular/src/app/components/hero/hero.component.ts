@@ -8,10 +8,5 @@ import { Component } from '@angular/core';
 export class HeroComponent {
 
   constructor() {
-
-  }
-
-  ngOnInit(): void {
-    
   }
 }

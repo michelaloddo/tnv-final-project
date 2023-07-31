@@ -40,6 +40,7 @@ export class RankingsComponent implements OnInit {
     this.rankService.getAllUsers().subscribe({
         next: (res) => {
           this.users = (res);
+          this.sortUsers();
           console.log('Utenti recuperati dall\'API:', this.users);
         },
         error: (error : any) => {
@@ -53,13 +54,5 @@ export class RankingsComponent implements OnInit {
     this.users = this.users?.sort((a: any, b: any) => {
       return (this.sortAsc ? 1 : -1) * (Number(a.points) - Number(b.points));
     });
-  }  
-
-  getScoreColor(points: number) {
-    let maxPoints = Math.max(...(this.users?.map(user => user.points) || [0]));
-    let normalizedPoints = points / maxPoints;
-    let lightness = 85 + 15 * (1 - Math.pow(normalizedPoints, 0.5)); 
-    return 'hsl(30, 50%, ' + lightness + '%)';
-  }
-  
+  }    
 }  

@@ -51,7 +51,6 @@ export class FavoritesMoviesItemDetailsComponent implements OnInit{
         this.movie = res;
         console.log('film recuperato\'API:', this.movie);
         this.getReview();
-        
       },
       error: (error: any) => {
         console.error('Si è verificato un errore nel recupero del film:', error);
@@ -85,16 +84,15 @@ export class FavoritesMoviesItemDetailsComponent implements OnInit{
     this.checkFormValidity();
   }
   
-    checkFormValidity() {
-      // Controllo se il commento o la valutazione sono stati modificati rispetto ai valori iniziali
-      this.isFormValid = !!this.comment || this.comment !== this.review.textComment || this.rating !== this.review.ratingStars;} 
+    checkFormValidity() { 
+      this.isFormValid = !!this.comment || this.comment !== this.review.textComment 
+      || this.rating !== this.review.ratingStars;
+    } 
     
   
       updateReview() {
-        // Controllo se il commento e il rating attuali sono diversi da quelli iniziali
         const commentChanged = this.copyComment !== this.review.textComment;
         const ratingChanged = this.copyRating !== this.review.ratingStars;
-        // Se sia il commento che il rating sono uguali a quelli iniziali, blocco la chiamata
         if (!commentChanged && !ratingChanged) {
           alert('Il commento e il rating sono identici a quelli iniziali');
           return;

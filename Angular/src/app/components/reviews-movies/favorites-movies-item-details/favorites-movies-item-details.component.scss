@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Special+Elite&display=swap");
 .card {
     display: flex;
     border-radius: 8px;
@@ -51,15 +52,15 @@
   .comment-container {
     position: absolute;
     top: 271px;
-    left: 310px; /* Modifica il valore per spostare il box più vicino alla card */
+    left: 310px; 
     display: grid;
     gap: 8px;
     
   }
   
   .comment-box {
-    width: 500px; /* Imposta la larghezza del box di testo al 100% */
-    max-width: 700px; /* Imposta la larghezza massima del box di testo per evitare di diventare troppo grande */
+    width: 500px; 
+    max-width: 700px;
     height: 100px;
     resize: vertical;
     padding: 8px;
@@ -80,7 +81,7 @@
   .info-container {
     position: absolute;
     top: 5px;
-    left: 310px; /* Modifica il valore per spostare il box più vicino alla card */
+    left: 310px; 
     display: grid;
     gap: 8px;
     align-items: center;

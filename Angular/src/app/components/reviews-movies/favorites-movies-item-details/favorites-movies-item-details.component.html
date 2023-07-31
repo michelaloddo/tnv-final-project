@@ -1,5 +1,4 @@
 <div class="card">
-    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
     <div class="poster-container">
       <img [src]="'https://image.tmdb.org/t/p/w342/'+ movie.poster_path" [alt]="movie.title" class="poster">
     </div>
@@ -16,10 +15,7 @@
       </div>
       <p class="overview">{{ movie.overview }}</p>
   
-  
-      
       <div *ngIf="!isFormValid ">
-        <!-- Aggiungi un messaggio o un avviso per indicare che il form non è valido -->
         <p>Il form non è valido. Si prega di compilare tutti i campi correttamente.</p>
       </div>
       

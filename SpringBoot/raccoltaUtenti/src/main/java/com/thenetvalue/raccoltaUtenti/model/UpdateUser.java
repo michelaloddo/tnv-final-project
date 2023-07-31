@@ -1,11 +1,8 @@
 package com.thenetvalue.raccoltaUtenti.model;
 
-public class UpdateUser extends User{
+public class UpdateUser {
     private String email;
     private String password;
-
-    public UpdateUser() {
-    }
 
     public String getEmail() {
         return email;

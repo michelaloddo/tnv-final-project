@@ -18,6 +18,7 @@ export class GameResultsComponent implements OnInit {
   sortedMoviesByUser = this.dbmoviesService.getMoviesByUser();
   sortedMoviesByCalculator = [...this.sortedMoviesByUser];
   currentUser!: User | undefined;
+  gameSessionPoints:number = 0;
 
   constructor(private dbmoviesService: DbmoviesService,private router: Router,private rankService: RankingsService) {
     
@@ -25,7 +26,6 @@ export class GameResultsComponent implements OnInit {
     
   ngOnInit() {
     this.currentUser=this.rankService.getCurrentUser();
-    console.log('Punteggio iniziale:', this.currentUser); // Debug: verifica il punteggio iniziale
     this.compareMovies(this.sortedMoviesByUser, this.sortedMoviesByCalculator);
   }
 
@@ -48,9 +48,9 @@ export class GameResultsComponent implements OnInit {
         sortedMoviesByCalculator[i].catch = true;
       }
     }
-    let gameSessionPoints = count * 10;
+    this.gameSessionPoints = count * 10;
     if (this.currentUser) {
-      this.addPointsUser(this.currentUser,gameSessionPoints);
+      this.addPointsUser(this.currentUser,this.gameSessionPoints);
     }
   }
 

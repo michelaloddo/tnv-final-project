@@ -80,17 +80,17 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  padding: 20px;
 }
 
 .movie-card {
   width: calc(20% - 40px); 
+  margin: 20px;
+  padding: 20px;
   background-color: #fff;
   border-radius: 10px;
   transition: box-shadow 0.3s ease, transform 0.3s ease;
-  margin-bottom: 15px; /* Aggiungi una distanza di 20px tra gli elementi card-body */
-  margin-left: 18px;
 }
-
 
 .movie-card:hover {
   transform: scale(1.05);

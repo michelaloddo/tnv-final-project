@@ -18,13 +18,17 @@
       </div>      
     </li>
   </ul>
+  <div *ngIf="gameSessionPoints > 0">
+  <h3>Complimenti!! Hai ottenuto un totale di {{gameSessionPoints}} punti!</h3>
+  </div>
+  <div *ngIf="gameSessionPoints === 0">
+    <h4>Che sfortuna!! Non hai ottenuto nessun punto!</h4>
+    </div>
 </div>
-
-     
+<br>    
 <div class="movie-list">
  <h4>Premi su una locandina per aggiungere il film ai preferiti, dare un voto e lasciare un commento.</h4>
  </div>
-
 <div class="movie-container">
   <ng-container *ngFor="let movie of sortedMoviesByCalculator">
     <div class="movie-card">

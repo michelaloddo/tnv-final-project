@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RatingService } from '../../@shared/services/rating.service';
+import { RatingService } from '../../../@shared/services/rating.service';
 import { HttpClient } from '@angular/common/http';
 import { Rating } from 'src/app/models/rating';
 import { User } from 'src/app/models/user';
@@ -22,9 +22,9 @@ export class FavoritesMoviesComponent implements OnInit{
   rating :number =0;
   review!: Rating;
 
-  constructor(private ratingService: RatingService,private dbMoviesService: DbmoviesService, private router:Router){   
+  constructor(private ratingService: RatingService,private dbMoviesService: DbmoviesService,
+             private router:Router){   
   this.currentUser= JSON.parse(localStorage.getItem("user") || '') as User;
-
   }
 
   
@@ -32,6 +32,7 @@ export class FavoritesMoviesComponent implements OnInit{
     this.getReviews();
     this.myMoviesReviewed;
   }
+
   
   getReviews() {
     this.ratingService.getRatings(this.currentUser.id).subscribe({
@@ -68,6 +69,7 @@ export class FavoritesMoviesComponent implements OnInit{
     });
   }
   
+
   getMyMoviesReviewed() {  
     this.myMoviesReviewed = this.movies.map((movie: Movie) => {
       const review = this.reviews.find((review: Rating) => review.movieId === movie.id);
@@ -82,6 +84,7 @@ export class FavoritesMoviesComponent implements OnInit{
       };
     });
   }
+
 
   onDeleteClicked(id: number){
     console.log(id);
@@ -98,9 +101,7 @@ export class FavoritesMoviesComponent implements OnInit{
     });
   }
 
-
   onEditClicked(movieId: number) {
-    
     this.router.navigateByUrl(`ratings/${this.currentUser.id}/${movieId}`);
   }
 

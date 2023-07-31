@@ -1,18 +1,36 @@
-.btn-primary {
-  background-color: #ffa500;
-  color: #000;
-  border: none;
-  padding: 15px 32px;
+.btn {
   text-align: center;
   text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  transition: background 0.3s ease;
-}
+  transition: background 0.3s ease, color 0.3s ease;
 
-.btn-primary:hover {
-  background-color: #000;
-  color: #ffa500;
+  &-primary, &-edit {
+    .button-text {
+      margin-left: 7px;
+      display: none;
+    }
+    
+    &:hover {
+      .button-text {
+        display: inline;
+      }
+    }
+  }
+  
+  &-primary {
+    background-color: #ffa500;
+    color: #000;
+    border: none;
+    padding: 12px 23px;
+    font-size: 16px;
+    margin: 4px 2px;
+
+    &:hover {
+      background-color: #000;
+      color: #ffa500;
+    }
+  }
 }
