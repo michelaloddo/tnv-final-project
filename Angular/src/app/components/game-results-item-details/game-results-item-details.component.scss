@@ -122,3 +122,36 @@
 .rating-label {
   margin-right: 10px;
 }
+
+@media screen and (max-width: 600px) {
+  .card-content {
+    flex-direction: column;
+
+    .info-container {
+      order: 1;
+      position: static;
+    }
+
+    .comment-container {
+      order: 3;
+      position: static;
+      width: 100%;
+    }
+
+    .overview {
+      order: 2;
+    }
+
+    .comment-box {
+      width: 90%;
+    }
+
+    .rating-container {
+      justify-content: center;
+    }
+
+    .buttons-container {
+      justify-content: center;
+    }
+  }
+}
