@@ -3,9 +3,7 @@
   font-family: "Sen", sans-serif;
   display: flex;
   align-items: center;
-}
 
-.navbar-dark .navbar-nav .nav-link {
   mat-icon {
     color: white;
   }
@@ -27,23 +25,23 @@
   }
 
   .icon-book-active {
-    color: rgb(255, 255, 0);
+    color:  #c0c0c0;
   }
 
   .icon-games-active {
-    color: rgb(92, 218, 20);
+    color: #8cf66b;
   }
 
   .icon-scoreboard-active {
-    color: rgb(0, 217, 255);
+    color: #67d9f6;
   }
 
-  .icon-favorite-active {
-    color: #f00;
+  .icon-star-active {
+    color: #f7d74c;
   }
 
   .icon-account_circle-active {
-    color: rgb(255, 0, 170);
+    color: #ea8b0f;
   }
 }
 
